@@ -1,8 +1,11 @@
 <%- include('partials/header.ejs') %>
+
 <h1>create post page</h1>
+
 <form action="/submit" method="POST">
   <input type="text" name="postTitle" placeholder="post title" />
   <input type="text" name="postContent" placeholder="start writing!" />
   <input type="submit" value="post" />
 </form>
+
 <%- include('partials/footer.ejs') %>

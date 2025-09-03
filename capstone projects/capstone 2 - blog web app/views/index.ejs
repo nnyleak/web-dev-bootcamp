@@ -4,13 +4,15 @@
 
 <% if (locals.allPosts.length > 0) { %>
     <% allPosts.forEach(post => { %>
-        <h2><%= post.title %></h2>
-        <p><%=  post.content %></p>
+        <div class="post">
+            <a href="/edit">
+                <h2><%= post.title %></h2>
+                <p><%= post.content %></p>
+            </a>
+        </div>
     <% }); %>
-</h2>
 
-<% } else { %>
-<p>no posts. start writing now!</p>
-<% } %>
+    <% } else { %>
+    <p>no posts. start writing now!</p>
 
-<%- include('partials/footer.ejs') %>
+<% } %> <%- include('partials/footer.ejs') %>

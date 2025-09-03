@@ -22,6 +22,10 @@ app.get("/create", (req, res) => {
   res.render("create.ejs");
 });
 
+app.get("/edit", (req, res) => {
+    res.render("edit.ejs");
+})
+
 app.post("/submit", (req, res) => {
   allPosts.push({
     title: req.body["postTitle"],
