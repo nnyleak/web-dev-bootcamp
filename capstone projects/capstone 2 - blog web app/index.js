@@ -9,23 +9,26 @@ import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
+const allPosts = [];
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", { allPosts });
 });
 
 app.get("/create", (req, res) => {
   res.render("create.ejs");
 });
 
-app.post("/", (req, res) => {
-  res.render("index.ejs", {
+app.post("/submit", (req, res) => {
+  allPosts.push({
     title: req.body["postTitle"],
     content: req.body["postContent"],
   });
+
+  res.render("index.ejs", { allPosts });
 });
 
 app.listen(port, () => {

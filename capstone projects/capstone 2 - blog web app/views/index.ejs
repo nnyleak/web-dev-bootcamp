@@ -2,9 +2,15 @@
 
 <h1>home page!</h1>
 
-<% if (locals.title && locals.content) { %>
-<h2><%= title %></h2>
-<p><%= content %></p>
+<% if (locals.allPosts.length > 0) { %>
+    <% allPosts.forEach(post => { %>
+        <h2><%= post.title %></h2>
+        <p><%=  post.content %></p>
+    <% }); %>
+</h2>
+
 <% } else { %>
 <p>no posts. start writing now!</p>
-<% } %> <%- include('partials/footer.ejs') %>
+<% } %>
+
+<%- include('partials/footer.ejs') %>
