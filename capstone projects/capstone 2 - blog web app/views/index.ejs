@@ -1,0 +1,10 @@
+<%- include('partials/header.ejs') %>
+
+<h1>home page!</h1>
+
+<% if (locals.title && locals.content) { %>
+<h2><%= title %></h2>
+<p><%= content %></p>
+<% } else { %>
+<p>no posts. start writing now!</p>
+<% } %> <%- include('partials/footer.ejs') %>
