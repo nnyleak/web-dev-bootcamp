@@ -3,11 +3,11 @@
 <h1>home page!</h1>
 
 <% if (locals.allPosts.length > 0) { %>
-    <% allPosts.forEach(post => { %>
+    <% allPosts.forEach((post) => { %>
         <div class="post">
-            <a href="/edit">
-                <h2><%= post.title %></h2>
-                <p><%= post.content %></p>
+            <a href="/view/<%= allPosts.indexOf(post) %>">
+                <h2 name="postTitle"><%= post.title %></h2>
+                <p name="postContent"><%= post.content %></p>
             </a>
         </div>
     <% }); %>

@@ -1,0 +1,15 @@
+<%- include('partials/header.ejs') %>
+
+<h1><%- postTitle %></h1>
+<p><%- postContent %></p>
+
+<form action="/edit" method="post">
+    <input type="submit" value="edit">
+    <input type="hidden" id="<%= postId %>"
+</form>
+
+<form action="/delete" method="post">
+    <input type="submit" value="delete">
+</form>
+
+<%- include('partials/footer.ejs') %>
