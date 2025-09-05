@@ -3,13 +3,12 @@
 <h1><%- postTitle %></h1>
 <p><%- postContent %></p>
 
-<form action="/edit" method="post">
-    <input type="submit" value="edit">
-    <input type="hidden" id="<%= postId %>"
+<form action="/edit/<%= postId %>" method="get">
+  <input type="submit" value="edit" />
 </form>
 
 <form action="/delete" method="post">
-    <input type="submit" value="delete">
+  <input type="submit" value="delete" />
 </form>
 
 <%- include('partials/footer.ejs') %>

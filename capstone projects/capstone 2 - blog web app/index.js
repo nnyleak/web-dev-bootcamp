@@ -42,11 +42,6 @@ app.get("/", (req, res) => {
   res.render("index.ejs", { allPosts });
 });
 
-// create post page
-app.get("/create", (req, res) => {
-  res.render("create.ejs");
-});
-
 // view post page
 app.get("/view/:id", (req, res) => {
   let index = req.params.id;
@@ -58,23 +53,40 @@ app.get("/view/:id", (req, res) => {
   });
 });
 
-// add post
-app.post("/submit", (req, res) => {
-  let post = new Post(req.body["postTitle"], req.body["postContent"]);
-  allPosts.push(post);
+// create post page
+app.get("/create", (req, res) => {
+  res.render("create.ejs");
+});
 
+// create post request
+app.post("/submit", (req, res) => {
+  addPost(req.body["postTitle"], req.body["postContent"]);
   res.render("index.ejs", { allPosts });
 });
 
-// edit post
-app.post("/edit", (req, res) => {
-  console.log("edit request sent");
-
+// edit post page
+app.get("/edit/:id", (req, res) => {
+  let index = req.params.id;
+  let post = allPosts[index];
+  res.render("create.ejs", {
+    postId: index,
+    postTitle: post.title,
+    postContent: post.content,
+  });
 });
 
-// delete post
+// edit post request
+app.post("/update", (req, res) => {
+    let index = req.body["index"];
+    let postTitle = req.body["postTitle"];
+    let postContent = req.body["postContent"];
+    editPost(index, postTitle, postContent);
+    res.redirect("/");
+})
+
+// delete post request
 app.post("/delete", (req, res) => {
-    deletePost(req.body)
+  deletePost(req.body);
   res.redirect("/");
 });
 
