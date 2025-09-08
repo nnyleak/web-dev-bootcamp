@@ -1,0 +1,18 @@
+<%- include('partials/header.ejs') %>
+
+<h1>all posts page</h1>
+
+<% if (locals.allPosts.length > 0) { %>
+    <% allPosts.forEach((post) => { %>
+        <div class="post">
+            <a href="/view/<%= allPosts.indexOf(post) %>">
+                <h2 name="postTitle"><%= post.title %></h2>
+                <p name="postContent"><%- (post.content.slice(0, 200)).replace(/(<br>)/gm, " ") %>...</p>
+            </a>
+        </div>
+    <% }); %>
+
+    <% } else { %>
+    <p>no posts. start writing now!</p>
+
+<% } %> <%- include('partials/footer.ejs') %>

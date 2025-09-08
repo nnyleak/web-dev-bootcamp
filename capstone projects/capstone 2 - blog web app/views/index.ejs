@@ -1,18 +1,5 @@
 <%- include('partials/header.ejs') %>
 
-<h1>home page!</h1>
+<a href="/create">create post button</a>
 
-<% if (locals.allPosts.length > 0) { %>
-    <% allPosts.forEach((post) => { %>
-        <div class="post">
-            <a href="/view/<%= allPosts.indexOf(post) %>">
-                <h2 name="postTitle"><%= post.title %></h2>
-                <p name="postContent"><%= post.content %></p>
-            </a>
-        </div>
-    <% }); %>
-
-    <% } else { %>
-    <p>no posts. start writing now!</p>
-
-<% } %> <%- include('partials/footer.ejs') %>
+<%- include('partials/footer.ejs') %>

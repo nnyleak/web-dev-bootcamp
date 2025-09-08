@@ -1,13 +1,11 @@
 <%- include('partials/header.ejs') %>
 
-
-
 <% if (locals.postId) { %>
 
   <h1>edit post</h1>
   <form action="/update" method="post">
-    <input type="text" name="postTitle" placeholder="title" value="<%= postTitle %>">
-    <input type="text" name="postContent" placeholder="content" value="<%= postContent %>">
+    <input type="text" name="postTitle" placeholder="title" value="<%= postTitle %>" required>
+    <input type="text" name="postContent" placeholder="content" value="<%= postContent %>" required>
     <input hidden type="text" name="index" value="<%= postId %>">
     <input type="submit" value="update post">
   </form>
@@ -16,8 +14,8 @@
 
   <h1>create post</h1>
 <form action="/submit" method="POST">
-  <input type="text" name="postTitle" placeholder="post title" />
-  <input type="text" name="postContent" placeholder="start writing!" />
+  <input type="text" name="postTitle" placeholder="post title" required/>
+  <input type="text" name="postContent" placeholder="start writing!" required/>
   <input type="submit" value="post" />
 </form>
 
