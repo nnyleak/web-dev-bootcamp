@@ -2,7 +2,7 @@
 
 <% if (locals.allPosts.length > 0) { %>
 
-<div class="all-posts container list-group d-flex flex-column align-items-center">
+<div class="container list-group d-flex flex-column align-items-center">
     <% allPosts.forEach((post) => { %>
             <a class="list-group-item list-group-item-action m-0 px-3 text-wrap text-break" href="/view/<%= allPosts.indexOf(post) %>">
                 <h6 class="mt-3 mb-1 p-0"><%= post.date %></h6>

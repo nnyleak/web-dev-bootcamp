@@ -19,6 +19,15 @@ body {
   background-color: var(--bg);
 }
 
+.fade-page {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-page.loaded {
+  opacity: 1;
+}
+
 /* adjust nav styling */
 .navbar {
   height: 80px;
@@ -38,16 +47,29 @@ body {
   margin-right: 15px;
 }
 
-/* adjust main container styling */
+/* adjust home page container styling */
 .btn {
   background-color: var(--secondary-text);
   border: 0;
   color: var(--bg);
+
+  transition: all .3s ease-in-out;
 }
 
 .btn:hover {
   background-color: var(--accent);
   color: var(--bg);
+
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active, .btn:focus:active {
+    background-color: var(--secondary-text);
+    color: var(--bg);
+
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .container {
