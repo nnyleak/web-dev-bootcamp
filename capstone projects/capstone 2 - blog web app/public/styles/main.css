@@ -2,66 +2,92 @@
   --bs-body-font-family: "Cutive", sans-serif;
 
   /* color variables */
-  --bg: #F5FAE1;
+  --bg: #f5fae1;
   --primary-text: black;
-  --secondary-text: #896C6C;
-  --accent: #E5BEB5;
-  --input-box: #EBEFDA;
-  --input-default-text: #B9ADA3;
+  --secondary-text: #896c6c;
+  --accent: #e5beb5;
+  --input-box: #ebefda;
+  --input-default-text: #b9ada3;
   --input-text: #474842;
 }
 
 body {
-    background-color: var(--bg);
+  background-color: var(--bg);
 }
 
 /* adjust nav styling */
 .navbar {
-    height: 80px;
+  height: 80px;
 }
 
 .navbar-brand {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 #navbarNav {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .nav-link {
-    color: var(--secondary-text);
-    margin-left: 15px;
-    margin-right: 15px;
+  color: var(--secondary-text);
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 /* adjust main container styling */
 .btn {
-    background-color: var(--secondary-text);
-    border: 0;
-    color: var(--bg);
+  background-color: var(--secondary-text);
+  border: 0;
+  color: var(--bg);
 }
 
 .btn:hover {
-    background-color: var(--accent);
-    color: var(--bg);
+  background-color: var(--accent);
+  color: var(--bg);
 }
 
 .container {
-    min-height: calc(100vh - 160px);
+  min-height: calc(100vh - 160px);
+  max-width: 800px;
 }
 
 .container p {
-    color: var(--accent);
+  color: var(--accent);
+}
+
+/* blog list styling adjustments */
+.list-group {
+    border-radius: 0;
+}
+
+.list-group-item {
+  background-color: var(--bg);
+  transition: background-color .2s ease-in-out, color .2s ease-in-out;
+  border: 0;
+  border-bottom: 2px var(--secondary-text) solid;
+}
+
+.list-group-item p {
+  color: var(--secondary-text);
+  font-size: small;
+}
+
+.list-group-item h6 {
+    color: var(--accent)
+}
+
+.all-posts .list-group-item:hover {
+    background-color: var(--input-box);
 }
 
 /* adjust footer styling */
 .footer {
-    height: 80px;
+  height: 80px;
 }
 
 .footer p {
-    color: var(--secondary-text);
-    font-size: small;
+  color: var(--secondary-text);
+  font-size: small;
 }
 
 .post {

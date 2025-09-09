@@ -20,22 +20,24 @@ let allPosts = [
 ];
 
 let displayedDay = "";
-let displayedDate = "";
+let displayedDateNum = "";
 let displayedMonth = "";
+let fullDate = "";
 
 // all post functions
-function Post(title, content) {
+function Post(title, content, date) {
   this.title = title;
   this.content = content;
+  this.date = date;
 }
 
-function addPost(title, content) {
-  let post = new Post(title, content);
+function addPost(title, content, date) {
+  let post = new Post(title, content, date);
   allPosts.push(post);
 }
 
-function editPost(index, title, content) {
-  allPosts[index] = new Post(title, content);
+function editPost(index, title, content, date) {
+  allPosts[index] = new Post(title, content, date);
 }
 
 function deletePost(index) {
@@ -114,7 +116,8 @@ function getDate() {
             break;
     }
 
-    displayedDate = d.getDate();
+    displayedDateNum = d.getDate();
+    fullDate = displayedMonth + " " + displayedDateNum;
 }
 
 // middleware
@@ -128,8 +131,7 @@ app.get("/", (req, res) => {
     getDate();
     res.render("index.ejs", {
         day: displayedDay,
-        date: displayedDate,
-        month: displayedMonth
+        date: fullDate
     });
 })
 
