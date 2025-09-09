@@ -11,6 +11,10 @@
   --input-text: #474842;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg);
 }

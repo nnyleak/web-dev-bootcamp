@@ -1,6 +1,7 @@
 <%- include('partials/header.ejs') %>
 
 <h1><%- postTitle %></h1>
+<h2><%- postDate %></h2>
 <p><%- postContent %></p>
 
 <form action="/edit/<%= postId %>" method="get">
