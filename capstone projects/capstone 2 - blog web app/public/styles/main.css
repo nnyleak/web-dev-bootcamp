@@ -16,6 +16,10 @@ body {
 }
 
 /* adjust nav styling */
+.navbar {
+    height: 80px;
+}
+
 .navbar-brand {
     font-size: 40px;
 }
@@ -30,7 +34,30 @@ body {
     margin-right: 15px;
 }
 
+/* adjust main container styling */
+.btn {
+    background-color: var(--secondary-text);
+    border: 0;
+    color: var(--bg);
+}
+
+.btn:hover {
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+.container {
+    min-height: calc(100vh - 160px);
+}
+
+.container p {
+    color: var(--accent);
+}
+
 /* adjust footer styling */
+.footer {
+    height: 80px;
+}
 
 .footer p {
     color: var(--secondary-text);

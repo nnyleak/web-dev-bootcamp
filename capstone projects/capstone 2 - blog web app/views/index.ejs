@@ -1,5 +1,15 @@
 <%- include('partials/header.ejs') %>
 
-<a href="/create">create post button</a>
+<div class="container d-flex flex-column justify-content-center align-items-center">
+  <div class="text-start">
+    <p class="my-1"><%= month %> <%= date %></p>
+    <h2 class="fw-bold"><%= day %></h2>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+      <a class="btn px-4 pt-3 pb-2" href="/create"><em>take a pause; write</em></a>
+    </div>
+  </div>
+  
+</div>
 
 <%- include('partials/footer.ejs') %>

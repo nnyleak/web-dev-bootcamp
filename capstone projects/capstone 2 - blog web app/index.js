@@ -19,6 +19,10 @@ let allPosts = [
   ),
 ];
 
+let displayedDay = "";
+let displayedDate = "";
+let displayedMonth = "";
+
 // all post functions
 function Post(title, content) {
   this.title = title;
@@ -38,6 +42,81 @@ function deletePost(index) {
   allPosts.splice(index, 1);
 }
 
+function getDate() {
+    const d = new Date();
+    let day = d.getDay();
+    let month = d.getMonth();
+
+    switch (day) {
+        case 0:
+            displayedDay = "sunday";
+            break;
+        case 1:
+            displayedDay = "monday";
+            break;
+        case 2:
+            displayedDay = "tuesday";
+            break;
+        case 3:
+            displayedDay = "wednesday";
+            break;
+        case 4:
+            displayedDay = "thursday";
+            break;
+        case 5:
+            displayedDay = "friday";
+            break;
+        case 6:
+            displayedDay = "saturday";
+            break;
+        default:
+            break;
+    }
+
+    switch (month) {
+        case 0:
+            displayedMonth = "jan"
+            break;
+        case 1:
+            displayedMonth = "feb"
+            break;
+        case 2:
+            displayedMonth = "mar"
+            break;
+        case 3:
+            displayedMonth = "apr"
+            break;
+        case 4:
+            displayedMonth = "may"
+            break;
+        case 5:
+            displayedMonth = "june"
+            break;
+        case 6:
+            displayedMonth = "july"
+            break;
+        case 7:
+            displayedMonth = "aug"
+            break;
+        case 8:
+            displayedMonth = "sept"
+            break;
+        case 9:
+            displayedMonth = "oct"
+            break;
+        case 10:
+            displayedMonth = "nov"
+            break;
+        case 11:
+            displayedMonth = "dec"
+            break;
+        default:
+            break;
+    }
+
+    displayedDate = d.getDate();
+}
+
 // middleware
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -46,7 +125,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // home page
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    getDate();
+    res.render("index.ejs", {
+        day: displayedDay,
+        date: displayedDate,
+        month: displayedMonth
+    });
 })
 
 // blog page
