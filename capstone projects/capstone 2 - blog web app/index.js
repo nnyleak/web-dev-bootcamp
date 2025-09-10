@@ -193,7 +193,7 @@ app.post("/update", (req, res) => {
 // delete post request
 app.post("/delete", (req, res) => {
   deletePost(req.body);
-  res.redirect("/");
+  res.redirect("/blog");
 });
 
 app.listen(port, () => {

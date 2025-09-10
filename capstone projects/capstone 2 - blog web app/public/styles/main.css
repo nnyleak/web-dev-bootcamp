@@ -106,6 +106,28 @@ body {
     background-color: var(--input-box);
 }
 
+/* view page adjustments */
+.view-content p {
+    font-size: small;
+    line-height: 2;
+    color: var(--secondary-text);
+}
+
+.view-content h6 {
+    color: var(--accent);
+}
+
+.btn-edit, .btn-delete {
+    background: none;
+    border: none;
+    color: var(--secondary-text);
+    text-decoration: underline;
+}
+
+.btn-delete {
+    color: #C64D4D;
+}
+
 /* adjust footer styling */
 .footer {
   height: 80px;
