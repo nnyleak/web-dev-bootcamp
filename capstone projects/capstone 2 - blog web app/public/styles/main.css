@@ -47,6 +47,53 @@ body {
   margin-right: 15px;
 }
 
+.custom-toggler {
+  border: none;
+  background: transparent;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.toggler-bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--secondary-text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.custom-toggler:focus,
+.custom-toggler:active {
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+
+@media (max-width: 575.98px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    right: 0;               /* stick to the right edge */
+    width: auto;            /* shrink to content */
+    background-color: var(--bg);
+    z-index: 2000;
+    margin-right: 3rem;
+    padding: 8px;
+
+    border-radius: 5px;
+    border: 1px solid var(--secondary-text);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .navbar-collapse .nav-link {
+    font-size: small;
+  }
+}
+
 /* adjust home page container styling */
 .btn {
   background-color: var(--secondary-text);
@@ -144,7 +191,7 @@ body {
 .custom-input:focus {
   outline: none;
   border-color: var(--secondary-text);
-  box-shadow: 0 0 0 2px rgba(0,0,0,0.05); /* subtle glow */
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
 }
 
 /* adjust footer styling */
