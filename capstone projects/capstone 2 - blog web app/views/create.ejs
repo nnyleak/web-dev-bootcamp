@@ -1,24 +1,63 @@
-<%- include('partials/header.ejs') %>
+<%- include('partials/header.ejs') %> <% if (locals.postId) { %>
 
-<% if (locals.postId) { %>
+<div class="container d-flex flex-column">
+  <h3>edit post</h3>
+  <form class="d-flex flex-column" action="/update" method="post">
+    <input
+      type="text"
+      name="postTitle"
+      placeholder="title"
+      value="<%= postTitle %>"
+      required
+      class="custom-input mb-3"
+    />
+    <textarea
+      type="text"
+      name="postContent"
+      placeholder="title your thoughts"
+      required
+      class="custom-input mb-3"
+      rows="12"
+      style="resize: vertical"
+    ><%= postContent %></textarea>
 
-  <h1>edit post</h1>
-  <form action="/update" method="post">
-    <input type="text" name="postTitle" placeholder="title" value="<%= postTitle %>" required>
-    <input type="text" name="postContent" placeholder="content" value="<%= postContent %>" required>
-    <input hidden type="text" name="index" value="<%= postId %>">
-    <input type="submit" value="update post">
+    <p class="m-0 p-0" style="font-size: x-small;">* to create a new line, use &lt;br&gt;</p>
+
+    <input hidden type="text" name="index" value="<%= postId %>" />
+    <input class="btn px-3 pt-2 pb-1 align-self-end" type="submit" value="save" />
   </form>
+</div>
 
 <% } else { %>
 
-  <h1>create post</h1>
-<form action="/submit" method="POST">
-  <input type="text" name="postTitle" placeholder="post title" required/>
-  <input type="text" name="postContent" placeholder="start writing!" required/>
-  <input type="submit" value="post" />
-</form>
+<div class="container d-flex flex-column">
+  <h3>create post</h3>
 
-<% } %>
+  <form class="d-flex flex-column" action="/submit" method="POST">
+    <input
+      type="text"
+      name="postTitle"
+      placeholder="title your thoughts"
+      required
+      class="custom-input mb-3"
+    />
 
-<%- include('partials/footer.ejs') %>
+    <textarea
+      name="postContent"
+      placeholder="the page is listening"
+      required
+      class="custom-input mb-3"
+      rows="12"
+      style="resize: vertical"
+    ></textarea>
+
+    <p class="m-0 p-0" style="font-size: x-small;">* to create a new line, use &lt;br&gt;</p>
+
+    <input class="btn px-3 pt-2 pb-1 align-self-end" type="submit" value="post" />
+  </form>
+
+  
+
+</div>
+
+<% } %> <%- include('partials/footer.ejs') %>
