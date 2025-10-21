@@ -73,7 +73,7 @@ app.patch("/jokes/:id", (req, res) => {
 app.delete("/jokes/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const searchID = jokes.findIndex((joke) => joke.id === id);
-  if (searchID > 1) {
+  if (searchID > -1) {
     jokes.splice(searchID, 1);
     res.sendStatus(200);
   } else {
